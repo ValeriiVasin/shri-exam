@@ -9,6 +9,8 @@
 var App = {};
 
 $(function () {
+    'use strict';
+
     // ensure that modules start when DOM is ready
     App.modules.start();
 });
