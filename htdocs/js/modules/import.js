@@ -4,7 +4,7 @@
 ;(function ($) {
     'use strict';
 
-    App.modules.define('import', function (app) {
+    App.modules.define('import', ['lectures'], function (app, lectures) {
         var el = {};
 
         /**
