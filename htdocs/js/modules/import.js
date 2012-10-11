@@ -24,6 +24,15 @@
 
             try {
                 lecturesJSON = JSON.parse( $.trim(data) );
+                if ($.type(lecturesJSON) !== 'array') {
+                    throw new Error('You have been provided not array');
+                }
+
+                if ( lecturesJSON.every(lectures.check) ) {
+                    app.publish('lectures:import', { data: lecturesJSON });
+                } else {
+                    throw new Error('Incorrect JSON syntax in import data');
+                }
             } catch (err) {
                 /**
                  * @todo Error processing

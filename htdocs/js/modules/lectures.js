@@ -55,6 +55,11 @@
          */
         function loadLectures() {
 
+        /**
+         * Save lectures object to localStorage
+         */
+        function saveLectures() {
+            localStorage.setItem('lectures', JSON.stringify(lectures));
         }
 
         /**
@@ -99,9 +104,36 @@
 
         }
 
+        /**
+         * Import data array
+         * @param  {Object} data Object with data key, that contains array of lectures
+         */
+        function importData(data) {
+            var localLectures = data.data;
+
+            // add uid and parse data into datetime field
+            localLectures = localLectures.map(function (lecture) {
+                var dateArray = lecture.date.split('.').map(Number),
+                    timeArray = lecture.time.split(':').map(Number),
+                    datetime = new Date(dateArray[2], dateArray[1] - 1, dateArray[0], timeArray[0], timeArray[1]);
+
+                lecture.uid = uid.get();
+                lecture.datetime = datetime;
+                delete lecture.date;
+                delete lecture.time;
+
+                return lecture;
+            });
+
+            // overwrite global lectures
+            lectures = localLectures;
+            saveLectures();
+        }
+
         return {
             init: function () {
                 loadLectures();
+                app.subscribe('lectures:import', importData);
             },
 
             /**
