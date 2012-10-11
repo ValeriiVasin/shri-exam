@@ -4,8 +4,51 @@
 ;(function ($) {
     'use strict';
 
-    App.modules.define('lectures', function () {
-        var lectures = null;    // internal object representation of stored lectures
+    App.modules.define('lectures', function (app) {
+        var lectures = null,    // internal object representation of stored lectures
+            uid;
+
+        /**
+         * Uniq lecture ID generatur
+         * @return {Object.Function} Hash with get, add, has methods
+         */
+        uid = (function () {
+            var _time = (new Date()).getTime(), // uniq value in milliseconds
+                _uids = {};                     // cache structure, to prevent array indexOf search
+
+            return {
+
+                /**
+                 * Return new
+                 * @return {Number} uniq identifier for lecture
+                 */
+                get: function () {
+                    while ( _uids[_time] ) {
+                        _time += 1;
+                    }
+                    _uids[ _time ] = true;
+
+                    return _time;
+                },
+
+                /**
+                 * Add uid to the list
+                 */
+                add: function (uid) {
+                    _uids[uid] = true;
+                },
+
+                /**
+                 * Check for uid in the list
+                 * @param  {Number}  uid Uniq lecture id
+                 * @return {Boolean}     Is uid in the list or not
+                 */
+                has: function (uid) {
+                    // nevermind on prototype keys
+                    return uid in _uids;
+                }
+            };
+        }());
 
         /**
          * Load lectures from localStorage and parse them
