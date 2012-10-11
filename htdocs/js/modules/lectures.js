@@ -54,6 +54,12 @@
          * Load lectures from localStorage and parse them
          */
         function loadLectures() {
+            lectures = JSON.parse(localStorage.getItem('lectures'));
+            // parse datetime field
+            lectures.forEach(function () {
+                lectures.datetime = new Date(lectures.datetime);
+            });
+        }
 
         /**
          * Save lectures object to localStorage
