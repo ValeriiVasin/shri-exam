@@ -55,10 +55,12 @@
          */
         function loadLectures() {
             lectures = JSON.parse(localStorage.getItem('lectures'));
-            // parse datetime field
-            lectures.forEach(function () {
-                lectures.datetime = new Date(lectures.datetime);
-            });
+            if (lectures) {
+                // parse datetime field
+                lectures.forEach(function (lecture) {
+                    lecture.datetime = new Date(lecture.datetime);
+                });
+            }
         }
 
         /**
@@ -161,6 +163,10 @@
 
                         // lecturer fields
                         typeof json.lecturer === 'object' && json.lecturer.name;
+            },
+
+            get: function () {
+                return lectures;
             }
         };
     });

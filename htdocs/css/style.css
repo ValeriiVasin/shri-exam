@@ -1,5 +1,8 @@
-#import-area {
+#import-area, #export-area {
     width: 800px;
     height: 400px;
     resize: none;
+}
+.import {
+    display: none;
 }
