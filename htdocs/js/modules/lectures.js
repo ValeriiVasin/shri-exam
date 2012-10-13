@@ -4,12 +4,12 @@
 ;(function ($) {
     'use strict';
 
-    App.modules.define('lectures', function (app) {
+    App.modules.define('lectures', ['utils'], function (app, utils) {
         var lectures = null,    // internal object representation of stored lectures
             uid;
 
         /**
-         * Uniq lecture ID generatur
+         * Uniq lecture ID generator
          * @return {Object.Function} Hash with get, add, has methods
          */
         uid = (function () {
@@ -138,6 +138,63 @@
             saveLectures();
         }
 
+        /**
+         * Groups lectures by date for UI simple rendering
+         * @return {Array.Object} Array of groups JSON
+         */
+        function groupLecturesForUI() {
+            var _lectures = [].concat(lectures),
+                keys,
+                groups = null,
+                groupedLectures,
+                DAY = 24 * 60 * 60 * 1000;
+
+            /**
+             * @todo Optimize sorting to prevent it each time.
+             *       Possibly update lectures
+             */
+
+            // order by date
+            _lectures.sort(function (a, b) {
+                return a.datetime - b.datetime;
+            });
+
+            // group sorted lectures by day
+            groups = _.groupBy(_lectures, function (lecture) {
+                return Math.floor( lecture.datetime.getTime() / DAY );
+            });
+
+            // create array of groups
+            keys = Object.keys(groups).sort();
+            groupedLectures = keys.map(function (key) {
+                var lectures = groups[key],
+                    datetime = lectures[0].datetime,
+                    // previous lecture timestamp (needed for detect empty time fields)
+                    prevTimestamp = 0;
+
+                // lectures processing
+                lectures = lectures.map(function (lecture, index) {
+
+                    // prevent changes of source
+                    lecture = $.extend(true, {}, lecture);
+
+                    // detect if previous lecture has same timestamp
+                    lecture.time = prevTimestamp !== lecture.datetime.getTime() ? utils.formatTime(lecture.datetime) : false;
+                    prevTimestamp = lecture.datetime.getTime();
+                    delete lecture.datetime;
+
+                    return lecture;
+                });
+
+                return {
+                    date: utils.formatDate(datetime, 'long'),
+                    lectures: lectures
+                };
+            });
+
+            return groupedLectures;
+        }
+
         return {
             init: function () {
                 loadLectures();
@@ -165,9 +222,15 @@
                         typeof json.lecturer === 'object' && json.lecturer.name;
             },
 
+            /**
+             * Interface for current lectures
+             * @return {Array} Current lectures array
+             */
             get: function () {
                 return lectures;
-            }
+            },
+
+            groupLecturesForUI: groupLecturesForUI
         };
     });
 
