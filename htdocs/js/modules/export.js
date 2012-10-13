@@ -10,28 +10,10 @@
             if (json) {
                 // provide export format
                 json = json.map(function (element) {
-                    var _element = $.extend(true, {}, element), // copy existed object to prevent any changes
-                        datetime = _element.datetime;
+                    var _element = $.extend(true, {}, element); // copy existed object to prevent any changes
 
-                    // default padding for string
-                    function pad(value) {
-                        return utils.pad(value);
-                    }
-
-                    _element.date = [
-                            datetime.getDate(),
-                            datetime.getMonth() + 1,
-                            datetime.getFullYear()
-                        ]
-                        .map(pad)
-                        .join('.');
-
-                    _element.time = [
-                            datetime.getHours(),
-                            datetime.getMinutes()
-                        ]
-                        .map(pad)
-                        .join(':');
+                    _element.date = utils.formatDate(_element.datetime);
+                    _element.time = utils.formatTime(_element.datetime);
 
                     delete _element.datetime;
                     delete _element.uid;
@@ -40,7 +22,7 @@
                 });
 
                 // export it as code
-                el.code.html( JSON.stringify(json, undefined, 2));
+                el.code.html( JSON.stringify(json, undefined, 4));
 
                 // highlight code
                 Prism.highlightElement( el.code.get(0) );
