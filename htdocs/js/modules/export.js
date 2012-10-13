@@ -40,7 +40,7 @@
                 });
 
                 // export it as code
-                el.code.html( JSON.stringify(lectures.get(), undefined, 2));
+                el.code.html( JSON.stringify(json, undefined, 2));
 
                 // highlight code
                 Prism.highlightElement( el.code.get(0) );
