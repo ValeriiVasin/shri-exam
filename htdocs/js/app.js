@@ -14,5 +14,5 @@ $(function () {
     // ensure that modules start when DOM is ready
     App.modules.start();
     // start routing
-    App.publish('routerstart');
+    App.publish('router_start');
 });

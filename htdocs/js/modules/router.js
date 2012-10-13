@@ -20,7 +20,7 @@
         return {
             init: function () {
                 // provide initial router state for subscribers
-                app.subscribe('routerstart', hashchange);
+                app.subscribe('router_start', hashchange);
             }
         };
     });
