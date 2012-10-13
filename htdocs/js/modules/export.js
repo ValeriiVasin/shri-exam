@@ -10,14 +10,15 @@
             if (json) {
                 // provide export format
                 json = json.map(function (element) {
-                    var datetime = element.datetime;
+                    var _element = $.extend(true, {}, element), // copy existed object to prevent any changes
+                        datetime = _element.datetime;
 
                     // default padding for string
                     function pad(value) {
                         return utils.pad(value);
                     }
 
-                    element.date = [
+                    _element.date = [
                             datetime.getDate(),
                             datetime.getMonth() + 1,
                             datetime.getFullYear()
@@ -25,17 +26,17 @@
                         .map(pad)
                         .join('.');
 
-                    element.time = [
+                    _element.time = [
                             datetime.getHours(),
                             datetime.getMinutes()
                         ]
                         .map(pad)
                         .join(':');
 
-                    delete element.datetime;
-                    delete element.uid;
+                    delete _element.datetime;
+                    delete _element.uid;
 
-                    return element;
+                    return _element;
                 });
 
                 // export it as code
@@ -52,7 +53,7 @@
         return {
             init: function () {
                 el.code = $(document.getElementById('export-json'));
-                app.subscribe('export', exportJSON);
+                app.subscribe('router:export', exportJSON);
             }
         };
     });
