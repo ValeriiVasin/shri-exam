@@ -1,8 +1,34 @@
+.nav li {
+    display: inline-block;
+    background: #888;
+    }
+.nav li.active {
+    background-color: lightblue;
+    }
+    .nav li a {
+        color: blue;
+        }
+    .nav li.active a {
+        color: red;
+        }
+
+.b-content {
+    }
+    .b-content div {
+        display: none;
+        }
+    .b-content.b-lectures .b-content-lectures {
+        display: block;
+        }
+    .b-content.b-import .b-content-import {
+        display: block;
+        }
+    .b-content.b-export .b-content-export {
+        display: block;
+        }
+
 #import-area, #export-area {
     width: 800px;
     height: 400px;
     resize: none;
-}
-.import {
-    display: none;
 }
