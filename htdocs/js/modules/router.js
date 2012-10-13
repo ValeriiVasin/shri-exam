@@ -11,6 +11,8 @@
             var hash = location.hash,
                 eventSuffix = hash.length ? hash.slice(1) : 'main';
 
+            // fire general change event
+            app.publish('router_change', { suffix: eventSuffix, hash: hash });
             // fire router event with hash value as only argument
             app.publish('router:' + eventSuffix, hash);
         }
