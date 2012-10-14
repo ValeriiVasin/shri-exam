@@ -47,7 +47,7 @@
             errorField = form.find('.error');
 
             // submit handler
-            form.on('click', 'button', function () {
+            form.on('click', '.b-lecture-save', function () {
                 var dataToSave = null;
 
                 /**
@@ -79,11 +79,10 @@
                     } else {
                         app.publish('lectures:add', dataToSave);
                     }
-                    form.remove();
                 }
             });
 
-            $('#temp').html( form );
+            $('.modal').html(form).modal();
         }
 
         return {

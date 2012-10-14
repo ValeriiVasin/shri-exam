@@ -8,7 +8,6 @@
         <link rel="stylesheet" href="css/prism.css" />
     </head>
     <body>
-
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
@@ -24,18 +23,18 @@
                             <li><a href="#import">Импорт</a></li>
                             <li><a href="#export">Экспорт</a></li>
                         </ul>
-                    </div><!--/.nav-collapse -->
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="container">
-             <div id="temp"></div>
+        <div class="modal hide"></div>
 
+        <div class="container">
              <div class="b-content">
                 <div class="b-content-lectures">
                     <h2>Лекции</h2>
-                    <a href="#" class='b-lectures-add'>Добавить</a>
+                    <a href="#" class='b-lectures-add btn btn-primary'>Добавить</a>
                     <ul class='b-content-lectures-list'></ul>
                 </div>
 
@@ -88,32 +87,63 @@
         </script>
 
         <script type="text/template" data-name='lecture-form'>
-            <div class='lecture-form-modal'>
-                <div class='lecture-form-modal-title'>
-                    <% if (edit) { %>Редактирование<% } else { %>Добавление<% } %> лекции
-                </div>
+            <div class='modal-header'>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3><% if (edit) { %>Редактирование<% } else { %>Добавление<% } %> лекции</h3>
+            </div>
 
-                <div class='field'>
-                    Дата: <input type='text' name='date' value='<%= date %>' />
-                </div>
-                <div class='field'>
-                    Время: <input type='text' name='time' value='<%= time %>' />
-                </div>
-                <div class='field'>
-                    Название лекции: <input type='text' name='lecture-title' value='<%= lecture.title %>' />
-                </div>
-                <div class='field'>
-                    Ссылка на лекцию: <input type='text' name='lecture-url' value='<%= lecture.url %>' />
-                </div>
-                <div class='field'>
-                    Лектор: <input type='text' name='lecturer-name' value='<%= lecturer.name %>' />
-                </div>
-                <div class='field'>
-                    Сайт лектора: <input type='text' name='lecturer-site' value='<%= lecturer.site %>' />
-                </div>
+            <div class='modal-body'>
+                <form class='form-horizontal'>
+                    <div class='control-group'>
+                        <label class="control-label" for="date">Дата</label>
+                        <div class="controls">
+                          <input type="text" id="date" name="date" placeholder="Дата" value='<%= date %>'>
+                        </div>
+                    </div>
 
-                <div class='error' style='display: none; color: red;'>Не все обязательные поля заполнены, либо неверный формат данных.</div>
-                <button class='lecture-form-modal-submit'>Сохранить</button>
+                    <div class='control-group'>
+                        <label class="control-label" for="time">Время</label>
+                        <div class="controls">
+                          <input type="text" id="time" name="time" placeholder="Время" value='<%= time %>'>
+                        </div>
+                    </div>
+
+                    <div class='control-group'>
+                        <label class="control-label" for="lecture-title">Название лекции</label>
+                        <div class="controls">
+                          <input type="text" id="lecture-title" name="lecture-title" placeholder="Название лекции" value='<%= lecture.title %>'>
+                        </div>
+                    </div>
+
+                    <div class='control-group'>
+                        <label class="control-label" for="lecture-url">Ссылка на лекцию</label>
+                        <div class="controls">
+                          <input type="text" id="lecture-url" name="lecture-url" placeholder="Ссылка на лекцию" value='<%= lecture.url %>'>
+                        </div>
+                    </div>
+
+                    <div class='control-group'>
+                        <label class="control-label" for="lecturer-name">Лектор</label>
+                        <div class="controls">
+                          <input type="text" id="lecturer-name" name="lecturer-name" placeholder="Лектор" value='<%= lecturer.name %>'>
+                        </div>
+                    </div>
+
+                    <div class='control-group'>
+                        <label class="control-label" for="lecturer-site">Сайт лектора</label>
+                        <div class="controls">
+                          <input type="text" id="lecturer-site" name="lecturer-site" placeholder="Сайт лектора" value='<%= lecturer.site %>'>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <% if (edit) { %>
+                    <a href="#" class="btn btn-danger pull-left" data-type='remove'><i class="icon-trash icon-white"></i> Удалить</a>
+                <% } %>
+                <a href="#" class="btn" data-dismiss='modal'>Отмена</a>
+                <a href="#" class="b-lecture-save btn btn-primary" data-dismiss='modal'>Сохранить</a>
             </div>
         </script>
 
