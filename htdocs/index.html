@@ -14,6 +14,10 @@
           <li><a href="#export">Export</a></li>
         </ul>
 
+        <div id="temp">
+
+        </div>
+
         <div class="b-content">
             <div class="b-content-lectures">
                 <h2>Lectures</h2>
@@ -65,6 +69,36 @@
                     </span>
                 </li>
             <% }); %>
+        </script>
+
+        <script type="text/template" data-name='lecture-form'>
+            <div class='lecture-form-modal'>
+                <div class='lecture-form-modal-title'>
+                    <% if (edit) { %>Редактирование<% } else { %>Добавление<% } %> лекции
+                </div>
+
+                <div class='field'>
+                    Дата: <input type='text' name='date' value='<%= date %>' />
+                </div>
+                <div class='field'>
+                    Время: <input type='text' name='time' value='<%= time %>' />
+                </div>
+                <div class='field'>
+                    Название лекции: <input type='text' name='lecture-title' value='<%= lecture.title %>' />
+                </div>
+                <div class='field'>
+                    Ссылка на лекцию: <input type='text' name='lecture-url' value='<%= lecture.url %>' />
+                </div>
+                <div class='field'>
+                    Лектор: <input type='text' name='lecturer-name' value='<%= lecturer.name %>' />
+                </div>
+                <div class='field'>
+                    Сайт лектора: <input type='text' name='lecturer-site' value='<%= lecturer.site %>' />
+                </div>
+
+                <div class='error' style='display: none; color: red;'>Не все обязательные поля заполнены, либо неверный формат данных.</div>
+                <button class='lecture-form-modal-submit'>Сохранить</button>
+            </div>
         </script>
 
         <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/es5-shim/1.2.4/es5-shim.min.js'></script>
