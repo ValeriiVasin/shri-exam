@@ -27,6 +27,36 @@
         display: block;
         }
 
+.b-lecture-date {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 15px;
+    }
+.b-lecture-time {
+    display: inline-block;
+    width: 50px;
+    }
+.b-lecture-time.empty {
+    visibility: hidden;
+    }
+.b-lecture-title {
+    display: inline-block;
+    width: 300px;
+    }
+.b-lecture-lecturer {
+    display: inline-block;
+    width: 200px;
+    }
+.b-lecture-edit {
+    display: none;
+    }
+    .b-lecture-edit i {
+        cursor: pointer;
+        }
+.b-lecture:hover .b-lecture-edit {
+    display: inline-block;
+    }
+
 #import-area, #export-area {
     width: 800px;
     height: 400px;

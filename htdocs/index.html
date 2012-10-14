@@ -17,6 +17,7 @@
         <div class="b-content">
             <div class="b-content-lectures">
                 <h2>Lectures</h2>
+                <ul class='b-content-lectures-list'></ul>
             </div>
 
             <div class="b-content-import">
@@ -31,6 +32,40 @@
                 <pre><code class="language-javascript" id='export-json'></code></pre>
             </div>
         </div>
+
+        <script type='text/template' id='lecture-group'>
+            <li class="b-lecture-date">
+                <%= date %>
+            </li>
+            <% lectures.forEach(function (lecture) { %>
+                <li class='b-lecture'>
+                    <span class='b-lecture-time<% if (lecture.time === false) { %> empty<% } %>'>
+                        <%= lecture.time %>
+                    </span>
+                    <span class='b-lecture-title'>
+                        <% if (lecture.lecture.url) { %>
+                            <a href='<%= lecture.lecture.url %>' target='_blank'>
+                        <% } %>
+                        <%= lecture.lecture.title %>
+                        <% if (lecture.lecture.url) { %>
+                            </a>
+                        <% } %>
+                    </span>
+                    <span class='b-lecture-lecturer'>
+                        <% if (lecture.lecturer.site) { %>
+                            <a href='<%= lecture.lecturer.site %>' target='_blank'>
+                        <% } %>
+                        <%= lecture.lecturer.name %>
+                        <% if (lecture.lecturer.site) { %>
+                            </a>
+                        <% } %>
+                    </span>
+                    <span class='b-lecture-edit'>
+                        <i data-uid='<%= lecture.uid %>'>edit</i>
+                    </span>
+                </li>
+            <% }); %>
+        </script>
 
         <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/es5-shim/1.2.4/es5-shim.min.js'></script>
         <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
