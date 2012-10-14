@@ -1,6 +1,6 @@
 body {
     padding-top: 60px;
-}
+    }
 
 .b-content {
     }
@@ -17,10 +17,15 @@ body {
         display: block;
         }
 
+.b-lecture {
+    min-height: 30px;
+    }
+
 .b-lecture-date {
     font-weight: bold;
     font-size: 18px;
     margin-top: 15px;
+    margin-bottom: 10px;
     }
 .b-lecture-time {
     display: inline-block;

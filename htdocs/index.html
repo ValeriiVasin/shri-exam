@@ -35,7 +35,7 @@
                 <div class="b-content-lectures">
                     <h2>Лекции</h2>
                     <a href="#" class='b-lectures-add btn btn-primary'>Добавить</a>
-                    <ul class='b-content-lectures-list'></ul>
+                    <ul class='b-content-lectures-list unstyled'></ul>
                 </div>
 
                 <div class="b-content-import">
@@ -80,7 +80,7 @@
                         <% } %>
                     </span>
                     <span class='b-lecture-edit'>
-                        <i data-uid='<%= lecture.uid %>'>edit</i>
+                        <a href='#' data-uid='<%= lecture.uid %>' title='Редактировать лекцию' class='b-lecture-edit-link'>изменить</a>
                     </span>
                 </li>
             <% }); %>

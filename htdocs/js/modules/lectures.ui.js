@@ -97,8 +97,9 @@
                 el.addLink = $('.b-lectures-add');
 
                 // edit click handler
-                el.list.on('click', '.b-lecture-edit i', function () {
+                el.list.on('click', '.b-lecture-edit-link', function (e) {
                     modal( $(this).data('uid') );
+                    e.preventDefault();
                 });
 
                 el.addLink.on('click', function () {
