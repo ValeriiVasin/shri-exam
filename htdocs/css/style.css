@@ -16,6 +16,17 @@ body {
     .b-content.b-export .b-content-export {
         display: block;
         }
+    .b-content-empty {
+        display: none;
+        }
+    .b-empty .b-content-empty {
+        display: block;
+        }
+
+    .b-empty .b-content .b-content-export,
+    .b-empty .b-content .b-content-lectures {
+        display: none;
+        }
 
 .b-lecture {
     min-height: 30px;

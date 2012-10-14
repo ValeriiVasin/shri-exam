@@ -4,7 +4,8 @@
 ;(function ($) {
     'use strict';
 
-    App.modules.define('lectures', ['utils'], function (app, utils) {
+    // Notice: navigation module is inside of dependencies, cuz it's waiting for lectures:empty state
+    App.modules.define('lectures', ['utils', 'navigation'], function (app, utils) {
         var lectures = null,    // internal object representation of stored lectures
             uid;
 
@@ -60,6 +61,8 @@
                 lectures.forEach(function (lecture) {
                     lecture.datetime = new Date(lecture.datetime);
                 });
+            } else {
+                app.publish('lectures:empty');
             }
         }
 
@@ -70,6 +73,8 @@
             localStorage.setItem('lectures', JSON.stringify(lectures));
             // rendering hook for ui module
             app.publish('ui:render');
+            // publish lectures state
+            app.publish(lectures && lectures.length ? 'lectures:not_empty' : 'lectures:empty');
         }
 
         /**
@@ -77,6 +82,9 @@
          * @param {Object} json JSON representation of the lecture
          */
         function add(json) {
+            if (!lectures) {
+                lectures = [];
+            }
             lectures.push( processLectureBeforeImport(json) );
             saveLectures();
         }

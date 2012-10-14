@@ -44,9 +44,20 @@
         return {
             init: function () {
                 el.content = $('.b-content');
+                el.container = $('.container');
                 el.menuItems = $('ul.nav > li');
 
                 app.subscribe('router_change', change);
+
+                app.subscribe('lectures:empty', function () {
+                    el.menuItems.last().hide();
+                    el.container.addClass('b-empty');
+                });
+
+                app.subscribe('lectures:not_empty', function () {
+                    el.menuItems.last().show();
+                    el.container.removeClass('b-empty');
+                });
             }
         };
     });
