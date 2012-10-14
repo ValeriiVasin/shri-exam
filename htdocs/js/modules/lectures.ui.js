@@ -14,7 +14,10 @@
          * Render lectures
          */
         function render() {
-            el.list.html( lectures.groupLecturesForUI().map(tmpl.group).join('') );
+            // render only if lectures exist
+            if ( lectures.get() ) {
+                el.list.html( lectures.groupLecturesForUI().map(tmpl.group).join('') );
+            }
         }
 
         /**
