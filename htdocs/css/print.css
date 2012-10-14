@@ -1,0 +1,15 @@
+body {
+    padding: 0;
+}
+
+.navbar {
+    display: none;
+}
+
+a {
+    color: black;
+}
+
+.b-lectures-add {
+    display: none;
+}
