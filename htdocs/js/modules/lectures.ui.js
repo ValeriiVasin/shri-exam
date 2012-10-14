@@ -47,7 +47,7 @@
             errorField = form.find('.error');
 
             // submit handler
-            form.on('click', '.b-lecture-save', function () {
+            form.on('click', '.b-lecture-save', function (e) {
                 var dataToSave = null;
 
                 /**
@@ -81,6 +81,7 @@
                     }
                     el.modal.modal('hide');
                 }
+                e.preventDefault();
             });
 
             // remove lecture handler
