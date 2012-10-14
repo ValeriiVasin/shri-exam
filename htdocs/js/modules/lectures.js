@@ -105,18 +105,10 @@
         }
 
         /**
-         * Reset all lectures (typically when import takes place)
-         * @param  {Array} list List of lectures
+         * Import lectures processing
+         * @param  {Object} data Object with <data> key, that contains array of lectures
          */
-        function reset(list) {
-
-        }
-
-        /**
-         * Import data array
-         * @param  {Object} data Object with data key, that contains array of lectures
-         */
-        function importData(data) {
+        function importLectures(data) {
             var localLectures = data.data;
 
             // add uid and parse data into datetime field
@@ -198,7 +190,7 @@
         return {
             init: function () {
                 loadLectures();
-                app.subscribe('lectures:import', importData);
+                app.subscribe('lectures:import', importLectures);
             },
 
             /**
