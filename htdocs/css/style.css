@@ -4,7 +4,9 @@ body {
 
 .b-content {
     }
-    .b-content div {
+    .b-content .b-content-lectures,
+    .b-content .b-content-export,
+    .b-content .b-content-import {
         display: none;
         }
     .b-content.b-lectures .b-content-lectures {
