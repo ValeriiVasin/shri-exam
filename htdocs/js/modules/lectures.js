@@ -107,28 +107,30 @@
         }
 
         /**
+         * Processing of imported lectures: fix date and time fields
+         * @param  {Object} lecture Lecture object with <date>, <time> fields
+         * @return {Object}         Processed lecture with <datetime> field and <uid> if hasn't been presented
+         */
+        function processLectureBeforeImport(lecture) {
+            var dateArray = lecture.date.split('.').map(Number),
+                timeArray = lecture.time.split(':').map(Number),
+                datetime = new Date(dateArray[2], dateArray[1] - 1, dateArray[0], timeArray[0], timeArray[1]);
+
+            lecture.uid = lecture.uid ? lecture.uid : uid.get();
+            lecture.datetime = datetime;
+            delete lecture.date;
+            delete lecture.time;
+
+            return lecture;
+        }
+
+        /**
          * Import lectures processing
          * @param  {Object} data Object with <data> key, that contains array of lectures
          */
         function importLectures(data) {
-            var localLectures = data.data;
-
             // add uid and parse data into datetime field
-            localLectures = localLectures.map(function (lecture) {
-                var dateArray = lecture.date.split('.').map(Number),
-                    timeArray = lecture.time.split(':').map(Number),
-                    datetime = new Date(dateArray[2], dateArray[1] - 1, dateArray[0], timeArray[0], timeArray[1]);
-
-                lecture.uid = uid.get();
-                lecture.datetime = datetime;
-                delete lecture.date;
-                delete lecture.time;
-
-                return lecture;
-            });
-
-            // overwrite global lectures
-            lectures = localLectures;
+            lectures = data.lectures.map(processLectureBeforeImport);
             saveLectures();
         }
 

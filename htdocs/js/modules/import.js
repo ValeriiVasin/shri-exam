@@ -29,7 +29,7 @@
                 }
 
                 if ( lecturesJSON.every(lectures.check) ) {
-                    app.publish('lectures:import', { data: lecturesJSON });
+                    app.publish('lectures:import', { lectures: lecturesJSON });
                 } else {
                     throw new Error('Incorrect JSON syntax in import data');
                 }
