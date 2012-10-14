@@ -76,7 +76,7 @@ body {
     display: none;
     }
 .modal-body {
-    max-height: 405px;
+    max-height: 420px;
     }
 .required {
     color: red;
