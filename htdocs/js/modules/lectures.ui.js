@@ -89,10 +89,15 @@
         return {
             init: function () {
                 el.list = $('.b-content-lectures-list');
+                el.addLink = $('.b-lectures-add');
 
                 // edit click handler
                 el.list.on('click', '.b-lecture-edit i', function () {
                     modal( $(this).data('uid') );
+                });
+
+                el.addLink.on('click', function () {
+                    modal();
                 });
 
                 app.subscribe('ui:render', render);

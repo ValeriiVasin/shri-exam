@@ -77,16 +77,8 @@
          * @param {Object} json JSON representation of the lecture
          */
         function add(json) {
-
-        }
-
-        /**
-         * Get json of the lecture with provided uid
-         * @param  {Number} uid Uniq lecture identifier
-         * @return {Object}     JSON representation of the lecture
-         */
-        function get(uid) {
-
+            lectures.push( processLectureBeforeImport(json) );
+            saveLectures();
         }
 
         /**
@@ -202,6 +194,7 @@
                 loadLectures();
                 app.subscribe('lectures:import', importLectures);
                 app.subscribe('lectures:update', update);
+                app.subscribe('lectures:add', add);
             },
 
             /**
