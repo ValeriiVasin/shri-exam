@@ -68,6 +68,8 @@
          */
         function saveLectures() {
             localStorage.setItem('lectures', JSON.stringify(lectures));
+            // rendering hook for ui module
+            app.publish('ui:render');
         }
 
         /**
