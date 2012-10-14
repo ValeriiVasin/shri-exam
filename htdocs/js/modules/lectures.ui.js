@@ -50,6 +50,11 @@
             form.on('click', 'button', function () {
                 var dataToSave = null;
 
+                /**
+                 * @todo Detect dirty states of the form and update only if dirty.
+                 *       Right now we overwrite lecture even nothing changed.
+                 */
+
                 // collect data from DOM
                 dataToSave = {
                     date: form.find('[name="date"]').val(),

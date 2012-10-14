@@ -91,11 +91,17 @@
 
         /**
          * Update lecture
-         * Notice: json should have <uid> field. it's necessary attribute for existed record
-         * @param  {Object} json JSON representation of the lecture
+         * @param  {Object} data Object for lecture update that contains {uid, lecture}
          */
-        function update(json) {
+        function update(data) {
+            var uid = data.uid;
 
+            lectures = lectures.filter(function (lecture) {
+                return lecture.uid !== uid;
+            });
+
+            lectures.push( processLectureBeforeImport(data.lecture) );
+            saveLectures();
         }
 
         /**
@@ -195,6 +201,7 @@
             init: function () {
                 loadLectures();
                 app.subscribe('lectures:import', importLectures);
+                app.subscribe('lectures:update', update);
             },
 
             /**
