@@ -218,10 +218,16 @@
 
             /**
              * Interface for current lectures
-             * @return {Array} Current lectures array
+             * @param {Number} uid Uniq lecture identifier. Optional
+             * @return {Object/Array.Object} Lecture or lectures array
              */
-            get: function () {
-                return lectures;
+            get: function (uid) {
+                if (!uid) {
+                    return lectures;
+                }
+                return _.find(lectures, function (lecture) {
+                    return lecture.uid === uid;
+                });
             },
 
             groupLecturesForUI: groupLecturesForUI
