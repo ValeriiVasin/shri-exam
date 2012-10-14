@@ -12,7 +12,7 @@
             var _element = null;
 
             if (!templates[name]) {
-                _element = $('script[name="'+ name +'"]');
+                _element = $('script[data-name="'+ name +'"]');
                 if (_element.length === 0) {
                     throw new Error('Template ' + name + ' not found');
                 }
