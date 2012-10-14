@@ -44,7 +44,7 @@
         return {
             init: function () {
                 el.content = $('.b-content');
-                el.menuItems = $('#menu > li');
+                el.menuItems = $('ul.nav > li');
 
                 app.subscribe('router_change', change);
             }

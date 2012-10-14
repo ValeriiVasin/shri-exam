@@ -1,16 +1,6 @@
-.nav li {
-    display: inline-block;
-    background: #888;
-    }
-.nav li.active {
-    background-color: lightblue;
-    }
-    .nav li a {
-        color: blue;
-        }
-    .nav li.active a {
-        color: red;
-        }
+body {
+    padding-top: 60px;
+}
 
 .b-content {
     }
@@ -58,7 +48,7 @@
     }
 
 #import-area, #export-area {
-    width: 800px;
+    width: 100%;
     height: 400px;
     resize: none;
 }

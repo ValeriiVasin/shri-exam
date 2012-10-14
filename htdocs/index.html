@@ -9,33 +9,47 @@
     </head>
     <body>
 
-        <ul class="nav" id="menu">
-          <li class="active"><a href="#">Лекции</a></li>
-          <li><a href="#import">Импорт</a></li>
-          <li><a href="#export">Экспорт</a></li>
-        </ul>
-
-        <div id="temp">
-
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                      <a class="brand" href="#">Yandex ШРИ</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="#">Лекции</a></li>
+                            <li><a href="#import">Импорт</a></li>
+                            <li><a href="#export">Экспорт</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
         </div>
 
-        <div class="b-content">
-            <div class="b-content-lectures">
-                <h2>Лекции</h2>
-                <a href="#" class='b-lectures-add'>Добавить</a>
-                <ul class='b-content-lectures-list'></ul>
-            </div>
+        <div class="container">
+             <div id="temp"></div>
 
-            <div class="b-content-import">
-                <h2>Импорт</h2>
-                <textarea name="import-area" id="import-area"></textarea>
-                <br /><br />
-                <button class='import-submit'>Import</button>
-            </div>
+             <div class="b-content">
+                <div class="b-content-lectures">
+                    <h2>Лекции</h2>
+                    <a href="#" class='b-lectures-add'>Добавить</a>
+                    <ul class='b-content-lectures-list'></ul>
+                </div>
 
-            <div class="b-content-export">
-                <h2>Экспорт</h2>
-                <pre><code class="language-javascript" id='export-json'></code></pre>
+                <div class="b-content-import">
+                    <h2>Импорт</h2>
+                    <textarea name="import-area" id="import-area"></textarea>
+                    <br /><br />
+                    <button class='import-submit'>Import</button>
+                </div>
+
+                <div class="b-content-export">
+                    <h2>Экспорт</h2>
+                    <pre><code class="language-javascript" id='export-json'></code></pre>
+                </div>
             </div>
         </div>
 
