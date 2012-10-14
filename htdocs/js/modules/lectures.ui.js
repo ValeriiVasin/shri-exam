@@ -82,6 +82,12 @@
                 }
             });
 
+            // remove lecture handler
+            form.on('click', '.b-lecture-remove', function () {
+                var uid = $(this).data('uid');
+                app.publish('lectures:remove', uid);
+            });
+
             $('.modal').html(form).modal();
         }
 

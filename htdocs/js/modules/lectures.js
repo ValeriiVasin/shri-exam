@@ -101,7 +101,10 @@
          * @param  {Number} uid Uniq lecture identifier
          */
         function remove(uid) {
-
+            lectures = lectures.filter(function (lecture) {
+                return lecture.uid !== uid;
+            });
+            saveLectures();
         }
 
         /**
@@ -195,6 +198,7 @@
                 app.subscribe('lectures:import', importLectures);
                 app.subscribe('lectures:update', update);
                 app.subscribe('lectures:add', add);
+                app.subscribe('lectures:remove', remove);
             },
 
             /**
