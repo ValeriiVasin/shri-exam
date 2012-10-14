@@ -79,6 +79,7 @@
                     } else {
                         app.publish('lectures:add', dataToSave);
                     }
+                    el.modal.modal('hide');
                 }
             });
 
@@ -88,13 +89,14 @@
                 app.publish('lectures:remove', uid);
             });
 
-            $('.modal').html(form).modal();
+            el.modal.html(form).modal();
         }
 
         return {
             init: function () {
                 el.list = $('.b-content-lectures-list');
                 el.addLink = $('.b-lectures-add');
+                el.modal = $('.modal');
 
                 // edit click handler
                 el.list.on('click', '.b-lecture-edit-link', function (e) {

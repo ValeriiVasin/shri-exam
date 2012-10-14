@@ -100,21 +100,23 @@
             <div class='modal-body'>
                 <form class='form-horizontal'>
                     <div class='control-group'>
-                        <label class="control-label" for="date">Дата</label>
+                        <label class="control-label" for="date">Дата <span class="required" title="обязательное поле">*</span></label>
                         <div class="controls">
                           <input type="text" id="date" name="date" placeholder="Дата" value='<%= date %>'>
+                          <span class="help-block">Формат: dd.mm.yyyy</span>
                         </div>
                     </div>
 
                     <div class='control-group'>
-                        <label class="control-label" for="time">Время</label>
+                        <label class="control-label" for="time">Время <span class="required" title="обязательное поле">*</span></label>
                         <div class="controls">
                           <input type="text" id="time" name="time" placeholder="Время" value='<%= time %>'>
+                          <span class="help-block">Формат: hh:mm</span>
                         </div>
                     </div>
 
                     <div class='control-group'>
-                        <label class="control-label" for="lecture-title">Название лекции</label>
+                        <label class="control-label" for="lecture-title">Название лекции <span class="required" title="обязательное поле">*</span></label>
                         <div class="controls">
                           <input type="text" id="lecture-title" name="lecture-title" placeholder="Название лекции" value='<%= lecture.title %>'>
                         </div>
@@ -128,7 +130,7 @@
                     </div>
 
                     <div class='control-group'>
-                        <label class="control-label" for="lecturer-name">Лектор</label>
+                        <label class="control-label" for="lecturer-name">Лектор <span class="required" title="обязательное поле">*</span></label>
                         <div class="controls">
                           <input type="text" id="lecturer-name" name="lecturer-name" placeholder="Лектор" value='<%= lecturer.name %>'>
                         </div>
@@ -140,6 +142,7 @@
                           <input type="text" id="lecturer-site" name="lecturer-site" placeholder="Сайт лектора" value='<%= lecturer.site %>'>
                         </div>
                     </div>
+                    <p class="text-error error">Ошибка! Не все обязательные к заполнению поля были заполнены, либо неверный формат данных.</p>
                 </form>
             </div>
 
@@ -148,7 +151,7 @@
                     <a href="#" class="b-lecture-remove btn btn-danger pull-left" data-uid="<%= uid %>" data-dismiss='modal'><i class="icon-trash icon-white"></i> Удалить</a>
                 <% } %>
                 <a href="#" class="btn" data-dismiss='modal'>Отмена</a>
-                <a href="#" class="b-lecture-save btn btn-primary" data-dismiss='modal'>Сохранить</a>
+                <a href="#" class="b-lecture-save btn btn-primary">Сохранить</a>
             </div>
         </script>
 

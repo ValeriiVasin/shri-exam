@@ -68,3 +68,14 @@ body {
     height: 400px;
     resize: none;
 }
+
+.error {
+    text-align: center;
+    display: none;
+    }
+.modal-body {
+    max-height: 405px;
+    }
+.required {
+    color: red;
+    }
