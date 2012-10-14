@@ -1,0 +1,300 @@
+[
+    {
+        "date": "15.09.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Общий цикл разработки",
+            "url": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=35"
+        },
+        "lecturer": {
+            "name": "Михаил Трошев",
+            "site": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=77"
+        }
+    },
+    {
+        "date": "15.09.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Task TrackerWiki",
+            "url": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=37"
+        },
+        "lecturer": {
+            "name": "Сергей Бережной",
+            "site": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=89"
+        }
+    },
+    {
+        "date": "18.09.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Командная строка Unix",
+            "url": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=116"
+        },
+        "lecturer": {
+            "name": "Виктор Ашик"
+        }
+    },
+    {
+        "date": "18.09.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Редакторы кода",
+            "url": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=118"
+        },
+        "lecturer": {
+            "name": "Вячеслав Олиянчук"
+        }
+    },
+    {
+        "date": "20.09.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Браузеры",
+            "url": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=171"
+        },
+        "lecturer": {
+            "name": "Георгий Мостоловица "
+        }
+    },
+    {
+        "date": "20.09.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Системы контроля версий",
+            "url": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=173"
+        },
+        "lecturer": {
+            "name": "Сергей Сергеев"
+        }
+    },
+    {
+        "date": "22.09.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Тестирование",
+            "url": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=260"
+        },
+        "lecturer": {
+            "name": "Марина Широчкина"
+        }
+    },
+    {
+        "date": "22.09.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Развертывание верстки",
+            "url": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=261"
+        },
+        "lecturer": {
+            "name": "Павел Пушкарев"
+        }
+    },
+    {
+        "date": "22.09.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "HTTP-протокол",
+            "url": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=262"
+        },
+        "lecturer": {
+            "name": "Алексей Бережной"
+        }
+    },
+    {
+        "date": "24.09.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "XSLT",
+            "url": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=404"
+        },
+        "lecturer": {
+            "name": "Сергей Пузанков"
+        }
+    },
+    {
+        "date": "25.09.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Механизм работы браузера",
+            "url": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=492"
+        },
+        "lecturer": {
+            "name": "Роман Комаров"
+        }
+    },
+    {
+        "date": "25.09.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Кеширование на клиенте и сервере",
+            "url": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=493"
+        },
+        "lecturer": {
+            "name": "Егор Львовский"
+        }
+    },
+    {
+        "date": "27.09.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Безопасность веб-приложений",
+            "url": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=548"
+        },
+        "lecturer": {
+            "name": "Тарас Иващенко"
+        }
+    },
+    {
+        "date": "27.09.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Языки программирования",
+            "url": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=549"
+        },
+        "lecturer": {
+            "name": "Алексей Воинов"
+        }
+    },
+    {
+        "date": "29.09.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "JS. Базовые знания"
+        },
+        "lecturer": {
+            "name": "Михаил Давыдов"
+        }
+    },
+    {
+        "date": "29.09.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Транспорт. AJAX"
+        },
+        "lecturer": {
+            "name": "Михаил Давыдов"
+        }
+    },
+    {
+        "date": "29.09.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "JS. Асинхронность"
+        },
+        "lecturer": {
+            "name": "Михаил Давыдов"
+        }
+    },
+    {
+        "date": "2.10.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Отладка кода"
+        },
+        "lecturer": {
+            "name": "Алексей Андросов"
+        }
+    },
+    {
+        "date": "4.10.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Клиентская оптимизация"
+        },
+        "lecturer": {
+            "name": "Иван Карев"
+        }
+    },
+    {
+        "date": "4.10.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Profiler"
+        },
+        "lecturer": {
+            "name": "Михаил Корепанов"
+        }
+    },
+    {
+        "date": "6.10.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Регулярные выражения"
+        },
+        "lecturer": {
+            "name": "Максим Ширшин"
+        }
+    },
+    {
+        "date": "6.10.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "CSS"
+        },
+        "lecturer": {
+            "name": "Михаил Трошев"
+        }
+    },
+    {
+        "date": "9.10.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Фреймворки. Обзор"
+        },
+        "lecturer": {
+            "name": "Алексей Андросов"
+        }
+    },
+    {
+        "date": "9.10.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "jQuery"
+        },
+        "lecturer": {
+            "name": "Алексей Бережной"
+        }
+    },
+    {
+        "date": "11.10.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "БЭМ (2 лекции)"
+        },
+        "lecturer": {
+            "name": "Владимир Варанкин"
+        }
+    },
+    {
+        "date": "13.10.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Шаблонизаторы"
+        },
+        "lecturer": {
+            "name": "Сергей Бережной",
+            "site": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=89"
+        }
+    },
+    {
+        "date": "13.10.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Дизайн"
+        },
+        "lecturer": {
+            "name": "Константин Горский"
+        }
+    },
+    {
+        "date": "13.10.2012",
+        "time": "19:00",
+        "lecture": {
+            "title": "Дизайн глазами разработчика"
+        },
+        "lecturer": {
+            "name": "Михаил Трошев",
+            "site": "http://clubs.ya.ru/4611686018427468886/replies.xml?item_no=77"
+        }
+    }
+]

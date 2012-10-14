@@ -62,8 +62,26 @@
                     lecture.datetime = new Date(lecture.datetime);
                 });
             } else {
-                app.publish('lectures:empty');
+                if (!localStorage.getItem('initialized')) {
+                    initialize();
+                } else {
+                    app.publish('lectures:empty');
+                }
             }
+        }
+
+        /**
+         * Initialize application with fake data
+         */
+        function initialize() {
+            $.ajax({
+                url: '/data.json',
+                dataType: 'json',
+                success: function (data) {
+                    importLectures({ lectures: data });
+                }
+            });
+            localStorage.setItem('ititialized', true);
         }
 
         /**
