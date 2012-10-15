@@ -105,8 +105,9 @@
                     e.preventDefault();
                 });
 
-                el.addLink.on('click', function () {
+                el.addLink.on('click', function (e) {
                     modal();
+                    e.preventDefault();
                 });
 
                 app.subscribe('ui:render', render);
