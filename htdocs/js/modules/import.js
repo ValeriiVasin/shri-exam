@@ -6,7 +6,8 @@
 
     App.modules.define('import', ['lectures', 'templates'], function (app, lectures, templates) {
         var el = {},
-            errorTmpl = templates.get('import-error');
+            errorTmpl = templates.get('import-error'),
+            successTmpl = templates.get('import-success');
 
         /**
          * Prevent default action for tab key
@@ -36,6 +37,7 @@
                 // we are free to add empty array and perform "clear" of lectures
                 if ( lecturesJSON.every(lectures.check) ) {
                     app.publish('lectures:import', { lectures: lecturesJSON });
+                    el.message.html( successTmpl({message: 'Импорт был успешно произведен!'}) );
                 } else {
                     return handleError( 'Некоторые обязательные поля не были указаны или формат данных не был соблюден.'+
                                         'Обратите внимание на формат даты: dd.mm.yyyy и формат времени: hh:mm.');
